@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>หนังแนะนำ — จากผู้ตอบ 60 คน</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600&family=Sarabun:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4f6fb;--ink:#17203a;--mute:#5d6786;--line:#d9deec;--card:#fff;--hi:#e8a317;--g0:#d64545;--g1:#d98f00;--g2:#c2427c;--g3:#22867b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--ink:#e9edf9;--mute:#9aa5c6;--line:#27304d;--card:#161e36;--g0:#ef6b6b;--g1:#f0b429;--g2:#e26aa2;--g3:#4cc3b5}}
+:root[data-theme="dark"]{--bg:#0e1424;--ink:#e9edf9;--mute:#9aa5c6;--line:#27304d;--card:#161e36;--g0:#ef6b6b;--g1:#f0b429;--g2:#e26aa2;--g3:#4cc3b5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Sarabun,"Noto Sans Thai",system-ui,sans-serif}
+h1,h2,h3,.t{font-family:Prompt,Sarabun,system-ui,sans-serif;font-weight:600;line-height:1.3;margin:0}
+main{max-width:1120px;margin:0 auto;padding:26px 16px 60px}
+h1{font-size:clamp(28px,5.5vw,44px)}
+.lead{color:var(--mute);max-width:60ch;margin:8px 0 22px}
+.wrap{display:grid;grid-template-columns:1fr 330px;gap:24px;align-items:start}
+@media(max-width:860px){.wrap{grid-template-columns:1fr}.side{order:-1;position:static!important}}
+.side{position:sticky;top:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.side h2{font-size:19px}.side p{margin:4px 0 10px;color:var(--mute);font-size:14px}
+select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px 8px;max-width:100%}
+select:focus-visible,button:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.pick{display:flex;gap:2px 8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.rec{border-left:6px solid var(--hi);background:var(--bg);border-radius:8px;padding:9px 12px;margin-top:9px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.rec b{display:block;font:500 16px/1.35 Prompt,sans-serif}.rec small{color:var(--mute)}
+.sc{font:600 26px Prompt,sans-serif;color:var(--hi)}
+.msg{border:1px dashed var(--line);border-radius:8px;padding:12px;color:var(--mute);font-size:14px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.tabs button{font:inherit;cursor:pointer;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:4px 14px}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tabs select{margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card[data-r]{border-color:var(--hi)}
+.po{min-height:120px;padding:12px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.po span{font-size:26px}.po b{font:600 16px/1.3 Prompt,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+.g0 .po{background:var(--g0)}.g1 .po{background:var(--g1)}.g2 .po{background:var(--g2)}.g3 .po{background:var(--g3)}
+.badge{position:absolute;top:8px;right:8px;background:var(--hi);color:#1b1500;font:600 12px Prompt,sans-serif;padding:2px 9px;border-radius:99px}
+.inf{padding:10px 12px 12px;font-size:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.avg{font:600 20px Prompt,sans-serif}.avg small{font:400 13px Sarabun,sans-serif;color:var(--mute)}
+.sim{color:var(--mute);font-size:13px;line-height:1.45}
+.foot{margin-top:40px;color:var(--mute);font-size:14px}
+</style></head><body><main>
+<h1>หนังแนะนำ 20 เรื่อง จากผู้ตอบ 60 คน</h1>
+<p class="lead">คะแนนมาจากแบบสอบถามของโปรเจควิชา Data Mining ให้คะแนนหนังที่คุณเคยดู แล้วระบบจะแนะนำเรื่องที่คุณน่าจะชอบจากหนังที่คล้ายกัน หรือเลือกดูผลของผู้ตอบแต่ละคนก็ได้</p>
+<div class="wrap">
+ <div>
+  <div class="tabs" id="tabs"><select id="so" aria-label="เรียงลำดับ"><option value="0">เรียงตามหมวด</option><option value="1">คะแนนเฉลี่ยสูงสุด</option></select></div>
+  <div class="grid" id="grid"></div>
+ </div>
+ <aside class="side"><h2>แนะนำสำหรับคุณ</h2>
+  <p>ให้คะแนนหนังที่เคยดูอย่างน้อย 3 เรื่อง หรือดูผลของผู้ตอบ:</p>
+  <div class="pick"><select id="us" aria-label="เลือกผู้ตอบ"></select></div>
+  <div id="rs"></div>
+ </aside>
+</div>
+<p class="foot">วิธีคิด: หาหนังที่ผู้ตอบให้คะแนนไปในทางเดียวกัน (Pearson ระหว่างหนังสองเรื่อง) แล้วทำนายคะแนนของเรื่องที่คุณยังไม่ได้ดูจากค่าเฉลี่ยของคุณ ± คะแนนของเรื่องที่คล้ายกัน ข้อมูลมีจำกัด (ช่องว่างราว 48%) ผลจึงเป็นเพียงตัวอย่างประกอบการเรียน</p>
+</main>
+<script>
+const N=["Extraction", "Captain America: The Winter Soldier", "John wick", "The avengers", "shang-chi and the legend of the ten rings", "แหยม ยโสธร", "หลวงพี่เท่ง", "สตรีเหล็ก", "ปล้นนะยะ", "หอแต๋วแตก", "One of the Road", "You&Me&Me", "THE STAIN", "I Love You Two Thousand", "The Paradise of Thorns", "Demon Slayer : Mugen Train", "Despicable me 4", "Toy Story", "The Secret Life of Pets", "Inside Out"],S=[[1.0, -0.447, 0.231, -0.112, -0.204, 0.405, -0.099, -0.48, -0.06, -0.405, -0.054, -0.068, -0.148, -0.445, -0.341, -0.122, -0.282, 0.257, -0.788, 0.478], [-0.447, 1.0, -0.461, 0.461, 0.38, -0.508, 0.347, 0.3, -0.126, -0.083, 0.076, -0.482, 0.29, 0.254, -0.368, -0.57, -0.209, -0.119, 0.066, -0.586], [0.231, -0.461, 1.0, -0.116, -0.483, 0.186, 0.158, -0.206, -0.496, 0.098, -0.296, -0.347, -0.253, -0.208, -0.005, 0.029, 0.116, -0.272, 0.127, 0.011], [-0.112, 0.461, -0.116, 1.0, -0.694, -0.487, -0.395, -0.229, -0.352, -0.132, 0.606, 0.311, 0.512, -0.071, -0.064, -0.271, -0.281, -0.236, -0.193, -0.265], [-0.204, 0.38, -0.483, -0.694, 1.0, 0.323, -0.041, 0.544, 0.393, -0.323, -0.488, 0.08, 0.094, -0.316, -0.087, -0.332, -0.64, 0.014, -0.259, -0.336], [0.405, -0.508, 0.186, -0.487, 0.323, 1.0, 0.187, -0.41, 0.234, 0.18, -0.623, -0.277, -0.149, -0.435, -0.275, -0.118, -0.059, -0.115, -0.197, 0.246], [-0.099, 0.347, 0.158, -0.395, -0.041, 0.187, 1.0, -0.595, -0.143, -0.007, -0.256, -0.604, -0.027, -0.305, -0.315, 0.657, -0.22, -0.062, 0.453, -0.095], [-0.48, 0.3, -0.206, -0.229, 0.544, -0.41, -0.595, 1.0, -0.336, -0.464, 0.378, -0.052, -0.203, 0.37, 0.243, -0.632, -0.144, 0.053, 0.158, -0.27], [-0.06, -0.126, -0.496, -0.352, 0.393, 0.234, -0.143, -0.336, 1.0, -0.233, -0.294, 0.257, 0.054, 0.027, -0.136, 0.557, -0.112, 0.303, -0.621, 0.566], [-0.405, -0.083, 0.098, -0.132, -0.323, 0.18, -0.007, -0.464, -0.233, 1.0, -0.074, 0.13, -0.375, 0.334, 0.163, -0.224, 0.453, -0.646, 0.075, -0.017], [-0.054, 0.076, -0.296, 0.606, -0.488, -0.623, -0.256, 0.378, -0.294, -0.074, 1.0, -0.378, 0.442, 0.091, -0.048, -0.364, -0.195, -0.062, 0.107, -0.427], [-0.068, -0.482, -0.347, 0.311, 0.08, -0.277, -0.604, -0.052, 0.257, 0.13, -0.378, 1.0, 0.029, 0.552, 0.158, -0.499, 0.015, -0.133, -0.429, 0.143], [-0.148, 0.29, -0.253, 0.512, 0.094, -0.149, -0.027, -0.203, 0.054, -0.375, 0.442, 0.029, 1.0, -0.687, -0.646, -0.489, 0.275, 0.407, -0.124, -0.283], [-0.445, 0.254, -0.208, -0.071, -0.316, -0.435, -0.305, 0.37, 0.027, 0.334, 0.091, 0.552, -0.687, 1.0, -0.267, 0.38, -0.186, -0.023, 0.392, -0.593], [-0.341, -0.368, -0.005, -0.064, -0.087, -0.275, -0.315, 0.243, -0.136, 0.163, -0.048, 0.158, -0.646, -0.267, 1.0, -0.366, -0.244, -0.197, -0.445, 0.327], [-0.122, -0.57, 0.029, -0.271, -0.332, -0.118, 0.657, -0.632, 0.557, -0.224, -0.364, -0.499, -0.489, 0.38, -0.366, 1.0, 0.094, -0.174, 0.809, 0.005], [-0.282, -0.209, 0.116, -0.281, -0.64, -0.059, -0.22, -0.144, -0.112, 0.453, -0.195, 0.015, 0.275, -0.186, -0.244, 0.094, 1.0, 0.042, 0.418, -0.387], [0.257, -0.119, -0.272, -0.236, 0.014, -0.115, -0.062, 0.053, 0.303, -0.646, -0.062, -0.133, 0.407, -0.023, -0.197, -0.174, 0.042, 1.0, -0.213, -0.106], [-0.788, 0.066, 0.127, -0.193, -0.259, -0.197, 0.453, 0.158, -0.621, 0.075, 0.107, -0.429, -0.124, 0.392, -0.445, 0.809, 0.418, -0.213, 1.0, -0.447], [0.478, -0.586, 0.011, -0.265, -0.336, 0.246, -0.095, -0.27, 0.566, -0.017, -0.427, 0.143, -0.283, -0.593, 0.327, 0.005, -0.387, -0.106, -0.447, 1.0]],R=[[8, 10, 7, 10, 8, null, 8, null, null, null, null, 8, null, null, null, null, 7, null, null, null], [7, null, 8, 5, null, 8, 7, 6, 6, 10, 7, 6, null, 8, 7, null, 10, null, 8, 8], [null, null, 10, 10, null, 10, null, null, null, 10, null, null, null, 10, 10, null, 10, 10, null, 10], [null, 7, 9, 10, 4, 7, 7, 6, 5, 7, 7, null, null, null, null, 8, null, 7, null, null], [null, null, 10, 8, null, 10, 10, null, null, null, null, null, null, 5, null, null, null, null, null, null], [null, null, 7, 6, null, 8, 8, 5, 6, 7, null, null, null, null, 2, 10, 8, 8, 10, 6], [null, 9, null, 10, 10, null, null, null, null, 10, null, null, null, null, 10, null, null, 10, null, 10], [9, null, 10, null, null, 8, 7, null, null, 6, 9, 7, null, 8, 7, 7, 9, 8, 7, 8], [null, null, null, 10, null, null, null, 5, null, null, null, null, null, null, 4, null, null, 7, null, null], [10, 7, 9, 5, null, 9, 7, 6, null, 7, 7, null, null, null, 6, 8, 7, 7, null, null], [8, null, 9, null, null, 8, 6, 8, 7, 7, 7, null, null, 6, null, null, 10, 9, 8, 7], [8, null, 9, null, null, 9, 7, null, null, 7, 6, 5, null, null, 6, 7, null, null, null, 6], [8, 10, 5, 10, 8, 7, 8, 9, 8, 10, 10, 7, 9, 10, 7, null, 9, 9, 10, 7], [6, null, 7, 5, null, 5, 7, null, null, 3, null, 4, null, null, 6, 9, 5, null, null, 6], [null, null, null, 10, null, 10, null, null, null, 10, 10, 10, 10, null, 10, null, 10, 10, null, 10], [null, null, 9, null, null, 10, 10, null, null, null, 10, null, 10, 10, null, null, 10, null, 10, null], [4, null, 7, null, null, null, null, 5, 6, 7, 4, null, null, 5, 6, null, 6, 3, 6, null], [8, null, 9, null, 9, null, null, 8, 10, 10, 10, 10, null, null, 10, null, 10, 10, 10, null], [9, null, 9, 9, null, 10, 10, null, 7, null, null, 9, 10, null, 10, 10, 10, 10, null, null], [null, 6, null, 4, 7, 6, 4, 7, null, null, null, null, 6, 4, 5, 5, null, null, 4, 7], [null, null, 9, 9, 9, 10, 9, 9, null, null, 9, null, 10, null, 10, null, 10, 7, 10, null], [null, null, 9, 10, 10, 10, 9, 9, null, null, 10, 7, null, null, 10, null, 10, 10, 10, null], [null, 5, 3, null, 6, 7, null, 4, 7, 5, 5, null, 6, 5, 4, null, 5, 6, 4, null], [null, 5, 3, null, 6, 7, null, 4, 7, 5, 5, null, 6, 5, 4, null, 5, 6, 4, null], [null, 9, 10, 9, null, 10, 9, null, null, 10, 10, null, 8, null, 10, null, 10, 10, null, 10], [null, 10, 8, 10, 10, 10, null, null, null, 10, 10, 10, null, null, 10, 10, 10, 10, 10, 10], [null, 9, 8, 10, null, 10, 10, null, null, 10, 10, null, null, 8, 10, null, null, 9, 9, 9], [null, null, 10, 9, 10, 9, null, 10, 10, null, 10, 10, null, null, 9, null, 10, 10, null, 10], [8, null, null, null, null, null, null, null, null, 9, null, 8, null, null, null, 10, null, null, null, null], [null, null, 10, 10, 9, 10, 9, 8, null, null, 10, 8, null, null, 10, null, 10, 10, null, 9], [10, null, 10, null, 10, 10, 10, null, 6, null, null, 6, 8, 9, null, null, 7, 8, 9, null], [null, null, 8, null, null, 6, 8, null, null, null, null, null, null, null, 10, 8, null, null, null, null], [10, null, 10, 10, null, 10, 10, null, 10, 10, null, null, null, null, 10, 10, 10, 10, 10, 10], [null, null, 5, 3, 6, null, 7, 4, 6, null, 4, null, 4, null, 6, 9, null, 5, 6, 7], [10, 10, null, null, null, null, 10, null, null, null, 9, 8, null, null, 10, 8, 8, 10, null, null], [10, null, 10, null, 9, 10, 8, 9, null, null, 10, 10, null, null, null, null, null, null, 10, 9], [null, 9, 9, 8, null, null, null, null, 7, null, null, null, null, 9, null, 10, 9, null, null, null], [null, 7, null, null, 8, null, null, null, null, 5, 1, null, null, null, null, 6, null, 7, null, null], [null, null, 10, null, 10, null, null, null, null, 9, 10, 10, null, null, null, null, 9, null, 9, null], [9, null, null, 9, 9, null, 9, null, 9, null, 9, 9, null, null, null, null, null, null, null, 9], [null, null, null, null, 10, null, null, 9, null, null, 9, 9, null, null, null, null, null, 9, null, null], [5, null, 8, 4, null, null, null, 9, 5, 6, null, 5, null, 8, 6, 6, null, 8, null, 4], [9, null, 9, null, null, null, null, 9, 8, null, 8, null, null, null, 8, null, null, null, 9, 9], [null, 10, null, null, null, null, null, null, 9, 6, 9, 4, null, null, null, null, null, 9, 7, null], [null, 5, 8, null, null, null, 6, 4, 7, 8, 5, 8, null, null, 8, null, null, 7, 4, 6], [null, null, 4, null, 6, null, 5, 7, null, 4, null, null, 3, null, 7, 8, null, null, 6, null], [6, 4, 6, 5, null, null, null, 5, 6, 4, null, 5, 6, null, 4, null, 4, 5, null, 7], [10, 7, null, null, null, 8, 6, null, null, null, 8, 8, null, null, null, null, 9, null, null, null], [null, null, 7, 10, 5, null, 5, 4, 5, null, null, null, 8, 5, 5, null, 7, 5, 6, null], [8, null, 6, null, null, 7, null, null, null, null, 8, 8, null, null, null, null, null, 7, null, null], [5, null, 6, 9, 6, 6, 4, 7, 5, null, 6, 8, 5, 8, null, null, 6, 4, null, null], [null, null, null, 7, null, null, null, 8, 7, null, 8, 7, null, null, null, null, null, null, 8, null], [null, 4, 6, null, 5, null, 5, 8, null, 4, 6, 5, null, null, 6, null, null, 9, 8, 7], [6, null, 8, null, 4, 7, null, 4, null, 8, null, 4, 2, null, null, 6, null, 3, null, 7], [null, 8, null, 10, null, null, 7, null, 4, 6, 8, null, 8, 5, null, 6, 7, null, null, null], [4, 7, null, null, 8, null, 6, 8, null, null, 7, 5, null, null, 7, null, null, 5, 9, 6], [null, 7, 5, null, 9, null, null, 8, null, 5, null, 6, null, null, 3, null, null, 5, 7, 3], [9, null, null, 10, null, 7, 4, null, null, 7, 8, null, null, 7, 9, null, 6, 8, 5, null], [5, 6, 9, null, null, null, null, 7, 3, 8, 7, 4, null, null, 8, null, null, 4, 8, 5], [null, null, 3, 5, 8, 7, 4, 8, null, null, null, 7, 5, null, 9, 4, null, null, 4, 7]],M=[7.74, 7.43, 7.8, 8.15, 7.82, 8.41, 7.39, 6.88, 6.77, 7.35, 7.85, 7.21, 6.89, 7.11, 7.47, 7.86, 8.27, 7.66, 7.66, 7.63],C=[27, 23, 45, 33, 28, 34, 36, 33, 26, 34, 39, 34, 18, 19, 40, 21, 33, 41, 32, 30],G=["แอคชั่น","ตลก","โรแมนติก","แอนิเมชั่น"],E=["💥","😂","💕","✨"];
+const grid=document.getElementById("grid"),tabs=document.getElementById("tabs"),rs=document.getElementById("rs"),us=document.getElementById("us"),so=document.getElementById("so");
+const cards=[],sel=[];let tab=-1;
+us.innerHTML='<option value="-1">ให้คะแนนเอง</option>'+R.map((_,u)=>'<option value="'+u+'">ผู้ตอบ user'+(u+1)+'</option>').join("");
+[["ทั้งหมด",-1],...G.map((g,i)=>[g,i])].forEach(([t,v],k)=>{const b=document.createElement("button");b.textContent=t;b.setAttribute("aria-pressed",k==0);
+ b.onclick=()=>{tab=v;tabs.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));cards.forEach((c,i)=>c.style.display=(v<0||(i/5|0)==v)?"":"none")};tabs.insertBefore(b,so)});
+N.forEach((n,i)=>{const g=i/5|0,c=document.createElement("article");c.className="card g"+g;
+ const near=S[i].map((s,j)=>[s,j]).filter(x=>x[1]!=i&&x[0]>0.3).sort((a,b)=>b[0]-a[0]).slice(0,2).map(x=>N[x[1]]);
+ c.innerHTML='<div class=po><span>'+E[g]+'</span><b>'+n+'</b></div><div class=inf><div class=avg>'+M[i].toFixed(2)+'<small> /10 · '+C[i]+' คนให้คะแนน</small></div><label>ให้คะแนน <select></select></label><div class=sim>'+(near.length?"คนที่ชอบเรื่องนี้ มักชอบ: "+near.join(", "):"ยังมีข้อมูลไม่พอหาเรื่องที่คล้ายกัน")+'</div></div>';
+ const s=c.querySelector("select");s.setAttribute("aria-label","ให้คะแนน "+n);s.innerHTML='<option value="">ยังไม่ได้ดู</option>'+[10,9,8,7,6,5,4,3,2,1].map(v=>"<option>"+v+"</option>").join("");
+ s.onchange=()=>{us.value="-1";calc()};sel[i]=s;cards[i]=c;grid.appendChild(c)});
+so.onchange=()=>{const o=N.map((_,i)=>i).sort((a,b)=>M[b]-M[a]);cards.forEach((c,i)=>c.style.order=so.value=="1"?o.indexOf(i):i)};
+us.onchange=()=>{const u=+us.value;sel.forEach((s,i)=>s.value=u<0||R[u][i]===null?"":R[u][i]);calc()};
+function calc(){
+ cards.forEach(c=>{c.removeAttribute("data-r");const b=c.querySelector(".badge");if(b)b.remove()});
+ const r=sel.map(s=>s.value===""?null:+s.value),got=r.map((v,i)=>v===null?-1:i).filter(i=>i>=0);
+ rs.innerHTML="";
+ if(got.length<3){rs.innerHTML='<div class="msg">ยังให้คะแนนไม่ถึง 3 เรื่อง</div>';return}
+ if(got.every(i=>r[i]===r[got[0]])){rs.innerHTML='<div class="msg">ผู้ใช้นี้ให้คะแนนเท่ากันทุกเรื่อง จึงไม่มีข้อมูลบอกว่าชอบเรื่องไหนมากกว่า</div>';return}
+ const m=got.reduce((a,i)=>a+r[i],0)/got.length,P=[];
+ for(let j=0;j<20;j++){if(r[j]!==null)continue;let n=0,d=0,best=null,bv=0;
+  got.forEach(t=>{const s=S[j][t],c=s*(r[t]-m);n+=c;d+=Math.abs(s);if(c>bv&&s>0){bv=c;best=t}});
+  P.push({j,p:Math.min(10,d>0?m+n/d:m),w:best})}
+ P.sort((a,b)=>b.p-a.p||a.j-b.j);
+ if(!P.length){rs.innerHTML='<div class="msg">ให้คะแนนครบทุกเรื่องแล้ว</div>';return}
+ P.slice(0,3).forEach((x,k)=>{const e=document.createElement("div");e.className="rec";
+  e.innerHTML="<div><small>อันดับ "+(k+1)+"</small><b>"+N[x.j]+"</b><small>"+(x.w!==null?"คล้ายกับ "+N[x.w]+" ที่ให้ "+r[x.w]:"คำนวณจากคะแนนที่ให้ไว้")+"</small></div><div class=sc>"+x.p.toFixed(2)+"</div>";rs.appendChild(e);
+  const c=cards[x.j];c.setAttribute("data-r",k+1);const b=document.createElement("div");b.className="badge";b.textContent="แนะนำ #"+(k+1);c.querySelector(".po").appendChild(b)})}
+calc();
+</script></body></html>
